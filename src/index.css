@@ -1,0 +1,373 @@
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+body {
+  background: radial-gradient(circle, #1c1c1c, #000);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================
+   HOME PAGE (Game Selection)
+======================================== */
+.home-page {
+  text-align: center;
+  padding: 60px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-size: 48px;
+  margin-bottom: 40px;
+  color: #ffd700;
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ff4500, 0 0 30px #ff4500;
+  animation: glowTitle 2s ease-in-out infinite alternate;
+}
+
+@keyframes glowTitle {
+  from {
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+  }
+  to {
+    text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500;
+  }
+}
+
+.game-card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.game-card {
+  background: linear-gradient(145deg, #1f1f1f, #0d0d0d);
+  border-radius: 16px;
+  padding: 20px;
+  width: 100%;
+  max-width: 230px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 12px #ffd700, 0 0 20px rgba(255, 0, 0, 0.3);
+  border: 2px solid #ffd700;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.game-card:hover {
+  transform: scale(1.1) rotate(1deg);
+  box-shadow: 0 0 20px #ff4500, 0 0 30px #ffd700;
+}
+
+.game-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #555;
+  box-shadow: 0 0 8px #000;
+}
+
+.game-card h3 {
+  margin: 0;
+  font-size: 22px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px #000;
+}
+
+.game-card::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.1), transparent);
+  transform: rotate(25deg);
+  animation: cardPulse 5s linear infinite;
+  z-index: -1;
+}
+
+@keyframes cardPulse {
+  0% {
+    transform: scale(1) rotate(25deg);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.05) rotate(25deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1) rotate(25deg);
+    opacity: 0.3;
+  }
+}
+
+/* ========================================
+   TIC TAC TOE GAME STYLES
+======================================== */
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  z-index: 1;
+  position: relative;
+}
+
+.status {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: #ffd700;
+  text-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500;
+  animation: glowStatus 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glowStatus {
+  from {
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+  }
+  to {
+    text-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500;
+  }
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.square {
+  width: 90px;
+  height: 90px;
+  margin: 6px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border: 2px solid #ffd700;
+  background-color: #1a1a1a;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px #ffd700;
+  border-radius: 8px;
+}
+
+.square:hover {
+  background-color: #333;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00ffff;
+}
+
+/* ========================================
+   BUTTON STYLES (Improved)
+======================================== */
+.reset-button,
+.home-button {
+  margin-top: 25px;
+  padding: 14px 30px;
+  font-size: 16px;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-image: linear-gradient(145deg, #ff4500, #ff6347);
+  box-shadow: 0 0 12px rgba(255, 69, 0, 0.5);
+}
+
+.reset-button::before,
+.home-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.reset-button:hover::before,
+.home-button:hover::before {
+  left: 100%;
+}
+
+.reset-button:hover,
+.home-button:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 20px #ffd700, 0 0 30px #ff4500;
+}
+
+.reset-button {
+  background-image: linear-gradient(145deg, #ff4500, #ff6347);
+}
+
+.home-button {
+  background-image: linear-gradient(145deg, #1e90ff, #3ea0ff);
+  margin-left: 12px;
+}
+
+/* ========================================
+   MINES GAME (Casino Theme)
+======================================== */
+.mines-container {
+  text-align: center;
+  padding: 40px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.status-message {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffd700;
+  margin: 20px 0;
+  text-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500;
+  animation: glowStatus 1.5s ease-in-out infinite alternate;
+}
+
+.mine-settings {
+  margin: 20px auto;
+  max-width: 300px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ffd700;
+}
+
+.mine-settings label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.mine-settings input[type="range"] {
+  width: 100%;
+  background: #ffd700;
+  accent-color: #ffd700;
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 50px);
+  gap: 8px;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  background-color: #111;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  border: 2px solid #ffd700;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 0 8px #ffd700;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cell:hover {
+  transform: scale(1.1);
+  background-color: #222;
+  box-shadow: 0 0 15px #00ffff;
+}
+
+.cell.safe {
+  background-color: #28a745 !important;
+  box-shadow: 0 0 15px #28a745;
+}
+
+.cell.mine {
+  background-color: #dc3545 !important;
+  box-shadow: 0 0 15px #dc3545;
+}
+
+/* ========================================
+   MEDIA QUERIES FOR MOBILE
+======================================== */
+@media (max-width: 768px) {
+  .title {
+    font-size: 34px;
+  }
+
+  .square {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .grid {
+    grid-template-columns: repeat(5, 40px);
+    gap: 6px;
+  }
+
+  .cell {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .reset-button,
+  .home-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 28px;
+  }
+
+  .game-card-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .square {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
+  .cell {
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .reset-button,
+  .home-button {
+    width: 90%;
+    margin: 12px auto 0;
+    display: block;
+  }
+}

@@ -1,12 +1,32 @@
-# React + Vite
+# 🎮 React Online Games
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a fun mini-game hub built using **React**. It includes two classic games:
 
-Currently, two official plugins are available:
+- 🟢 **Tic Tac Toe**
+- 💣 **Minesweeper**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Enjoy simple, engaging gameplay with a responsive and modern UI.
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🎲 Two games in one app
+- ⚛️ Built with React
+- 📱 Responsive design
+- 🎨 Simple and clean UI
+
+## 🛠️ Tech Stack
+
+- React
+- JavaScript
+- CSS
+- Vite
+
+## 📂 Run Locally
+
+Clone the project and run:
+
+```bash
+git clone https://github.com/yadav09anil/online-games.git
+cd online-games
+npm install
+npm run dev

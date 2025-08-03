@@ -30,3 +30,17 @@ git clone https://github.com/yadav09anil/online-games.git
 cd online-games
 npm install
 npm run dev
+
+```
+## 📸 Screenshots
+
+Below are some screenshots of the Online Games website:
+
+### 🏠 Home Page
+![Home Page](Images/Home.png)
+
+### 🎮 Game Page 1
+![Game Page 1](Images/Game1.png)
+
+### 🎮 Game Page 2
+![Game Page 2](Images/Game2.png)
